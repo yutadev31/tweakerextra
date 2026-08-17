@@ -13,6 +13,8 @@ public class TweakerExtraClient implements ClientModInitializer {
 	private static final Configs CONFIG_HANDLER = new Configs();
 	private static final KeyMapping OPEN_CONFIG = KeyMappingHelper.registerKeyMapping(new KeyMapping(
 			"key.tweakerextra.open_config", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_O, KeyMapping.Category.MISC));
+	private static final KeyMapping OPEN_SELECTION_EDITOR = KeyMappingHelper.registerKeyMapping(new KeyMapping(
+			"key.tweakerextra.open_selection_editor", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_N, KeyMapping.Category.MISC));
 
 	@Override
 	public void onInitializeClient() {
@@ -23,6 +25,7 @@ public class TweakerExtraClient implements ClientModInitializer {
 			while (OPEN_CONFIG.consumeClick()) {
 				client.setScreenAndShow(TweakerExtraConfigGui.create(null));
 			}
+			while (OPEN_SELECTION_EDITOR.consumeClick()) client.setScreenAndShow(new SelectionEditorScreen());
 		});
 	}
 }

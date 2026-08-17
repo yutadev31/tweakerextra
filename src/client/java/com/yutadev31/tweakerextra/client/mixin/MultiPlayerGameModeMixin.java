@@ -1,6 +1,6 @@
 package com.yutadev31.tweakerextra.client.mixin;
 
-import com.yutadev31.tweakerextra.client.LitematicaRange;
+import com.yutadev31.tweakerextra.client.CustomSelection;
 import com.yutadev31.tweakerextra.client.Configs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.MultiPlayerGameMode;
@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MultiPlayerGameModeMixin {
     @Inject(method = "startDestroyBlock", at = @At("HEAD"), cancellable = true)
     private void tweakerextra$restrictBreaking(BlockPos pos, Direction direction, CallbackInfoReturnable<Boolean> cir) {
-        if (Configs.RESTRICT_BREAKING.getBooleanValue() && !LitematicaRange.allows(pos)) {
+        if (Configs.RESTRICT_BREAKING.getBooleanValue() && !CustomSelection.allows(pos)) {
             blocked("message.tweakerextra.breaking_blocked");
             cir.setReturnValue(false);
         }
@@ -41,7 +41,7 @@ public class MultiPlayerGameModeMixin {
             target = target.relative(hit.getDirection());
         }
 
-        if (!LitematicaRange.allows(target)) {
+        if (!CustomSelection.allows(target)) {
             blocked("message.tweakerextra.placing_blocked");
             cir.setReturnValue(InteractionResult.FAIL);
         }

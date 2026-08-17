@@ -1,5 +1,7 @@
 {
   "key.tweakerextra.open_config": "TweakerExtra 設定画面を開く",
+  "key.tweakerextra.open_selection_editor": "TweakerExtra 範囲数値編集を開く",
+  "screen.tweakerextra.selection_editor": "Cuboid 選択範囲: 始点 XYZ / 終点 XYZ",
   "key.categories.tweakerextra": "TweakerExtra",
   "tweakerextra.gui.title.configs": "TweakerExtra - 範囲制限",
   "tweakerextra.config.restrictBreaking": "Litematica 範囲外の採掘を禁止",
