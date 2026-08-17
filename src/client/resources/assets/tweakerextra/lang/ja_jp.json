@@ -1,0 +1,11 @@
+{
+  "key.tweakerextra.open_config": "TweakerExtra 設定画面を開く",
+  "key.categories.tweakerextra": "TweakerExtra",
+  "tweakerextra.gui.title.configs": "TweakerExtra - 範囲制限",
+  "tweakerextra.config.restrictBreaking": "Litematica 範囲外の採掘を禁止",
+  "tweakerextra.config.restrictPlacing": "Litematica 範囲外の設置を禁止",
+  "tweakerextra.config.showBlockedMessage": "範囲外ブロック時にメッセージを表示",
+  "tweakerextra.hotkeys.category": "TweakerExtra 範囲制限",
+  "message.tweakerextra.breaking_blocked": "Litematica の選択範囲外は採掘できません",
+  "message.tweakerextra.placing_blocked": "Litematica の選択範囲外には設置できません"
+}

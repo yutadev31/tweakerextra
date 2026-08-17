@@ -1,0 +1,11 @@
+{
+  "key.tweakerextra.open_config": "Open TweakerExtra settings",
+  "key.categories.tweakerextra": "TweakerExtra",
+  "tweakerextra.gui.title.configs": "TweakerExtra - Range restrictions",
+  "tweakerextra.config.restrictBreaking": "Block breaking outside Litematica area",
+  "tweakerextra.config.restrictPlacing": "Block placing outside Litematica area",
+  "tweakerextra.config.showBlockedMessage": "Show blocked-action message",
+  "tweakerextra.hotkeys.category": "TweakerExtra range restrictions",
+  "message.tweakerextra.breaking_blocked": "You cannot break blocks outside the Litematica selection",
+  "message.tweakerextra.placing_blocked": "You cannot place blocks outside the Litematica selection"
+}

@@ -1,0 +1,46 @@
+{
+	"schemaVersion": 1,
+	"id": "tweakerextra",
+	"version": "${version}",
+	"name": "TweakerExtra",
+	"description": "Litematica の範囲選択内だけで採掘・設置できる Tweakeroo 拡張。",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"sources": "https://github.com/yutadev31/tweakerextra"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/tweakerextra/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.yutadev31.tweakerextra.TweakerExtra"
+		],
+		"client": [
+			"com.yutadev31.tweakerextra.client.TweakerExtraClient"
+		],
+		"modmenu": [
+			"com.yutadev31.tweakerextra.client.TweakerExtraModMenu"
+		]
+	},
+	"mixins": [
+		"tweakerextra.mixins.json",
+		{
+			"config": "tweakerextra.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"malilib": ">=0.29.3",
+		"litematica": ">=0.28.4",
+		"tweakeroo": ">=0.29.2"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}
