@@ -1,19 +1,20 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      flake-utils,
     }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      devShells.${system}.default = pkgs.mkShell {
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+
         nativeBuildInputs = with pkgs; [
           jdk25
         ];
@@ -29,21 +30,13 @@
           libxi
           libxinerama
         ];
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          inherit nativeBuildInputs buildInputs;
 
-        LD_LIbRARY_PATH = pkgs.lib.makeLibraryPath (
-          with pkgs;
-          [
-            libGL
-            mesa
-            glfw
-            libx11
-            libxext
-            libxrandr
-            libxcursor
-            libxi
-            libxinerama
-          ]
-        );
-      };
-    };
+          LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+        };
+      }
+    );
 }
